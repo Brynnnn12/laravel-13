@@ -13,11 +13,9 @@
 
         <div class="flex flex-col leading-none">
             <span class="text-lg font-extrabold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent hidden md:block">
-                Sistem Absen
+                {{ config('app.name', 'Laravel') }}
             </span>
-            <span class="text-[10px] text-gray-400 font-bold tracking-[0.15em] uppercase hidden md:block mt-0.5">
-                Workspace v.2.4
-            </span>
+
         </div>
     </div>
 
@@ -76,7 +74,7 @@
                         onclick="event.preventDefault(); this.closest('form').submit();"
                         class="flex items-center gap-2 py-2.5 text-red-600 hover:bg-red-50">
                         <i class="fas fa-sign-out-alt w-4"></i>
-                        <span>Keluar Aplikasi</span>
+                        <span>Logout</span>
                     </x-dropdown-link>
                 </form>
             </x-slot>

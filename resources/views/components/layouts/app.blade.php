@@ -36,6 +36,8 @@
         .main-content::-webkit-scrollbar-thumb:hover {
             background: #cbd5e1;
         }
+
+
     </style>
 </head>
 
@@ -51,21 +53,15 @@
 
         <x-dashboard.sidebar :active="$activePage ?? ''" />
 
-        <div class="flex flex-col flex-1 min-w-0 bg-[#f8fafc] relative overflow-hidden">
+        <div class="flex flex-col flex-1 min-w-0 bg-[#f8fafc] relative">
 
             <x-dashboard.navbar :user="auth()->user()" onMenuClick="sidebarOpen = !sidebarOpen" />
 
             <main class="main-content flex-1 overflow-y-auto overflow-x-hidden p-4 sm:p-6 lg:p-8">
-                {{-- Container untuk menjaga lebar konten agar tidak terlalu lebar di layar ultra-wide --}}
                 <div class="max-w-7xl mx-auto space-y-6">
                     {{ $slot }}
                 </div>
-
-                <footer class="mt-12 py-6 text-center text-sm text-slate-400 border-t border-slate-100">
-                    &copy; {{ date('Y') }} {{ config('app.name') }}. All rights reserved.
-                </footer>
             </main>
-
         </div>
     </div>
 
