@@ -9,6 +9,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('auth/google/redirect', [App\Http\Controllers\Auth\GoogleController::class, 'google_redirect'])
+    ->middleware('guest')
+    ->name('google.redirect');
+Route::get('auth/google/callback', [App\Http\Controllers\Auth\GoogleController::class, 'google_callback'])
+    ->middleware('guest')
+    ->name('google.callback');
+
+
 // Middleware 'auth' untuk semua user yang sudah login
 Route::middleware(['auth', 'verified'])->group(function () {
 

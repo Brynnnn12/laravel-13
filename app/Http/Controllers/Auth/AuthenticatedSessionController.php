@@ -28,6 +28,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
+        toast('Login berhasil!', 'success');
         return redirect()->intended(route('dashboard', absolute: false));
     }
 
@@ -42,6 +43,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
+        toast('Logout berhasil!', 'success');
         return redirect('/');
     }
 }
